@@ -25,3 +25,27 @@ Implements global error handling, Logging with AOP and leverages virtual threads
 ### Run Locally
 ```bash
 mvn spring-boot:run
+
+### Swagger UI
+http://localhost:8080/swagger-ui.html
+
+### Example API Calls
+1. Get order by ID 
+```bash
+curl http://localhost:8080/orders/ORD-98765
+
+2. Create order
+```bash
+curl -X POST http://localhost:8080/orders \
+  -H "Content-Type: application/json" \
+  -H "orderId: ORD-98765" \
+  -d '{
+        "customerId": "C-123",
+        "items": [
+          { "productCode": "PROD-001", "qty": 1 },
+          { "productCode": "PROD-002", "qty": 2 }
+        ]
+      }'
+
+### Notes
+In production, schema management would be handled by Liquibase. For demo purposes, Hibernate auto-ddl is used.
