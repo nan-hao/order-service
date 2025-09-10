@@ -12,7 +12,6 @@ Implements global error handling, Logging with AOP and leverages virtual threads
 - Springdoc OpenAPI (Swagger UI)
 - Testcontainers (Postgres for integration tests)
 - Docker
-- 
 ---
 
 ## Getting Started
@@ -25,6 +24,7 @@ Implements global error handling, Logging with AOP and leverages virtual threads
 ### Run Locally
 ```bash
 mvn spring-boot:run
+```
 
 ### Swagger UI
 http://localhost:8080/swagger-ui.html
@@ -33,7 +33,7 @@ http://localhost:8080/swagger-ui.html
 1. Get order by ID 
 ```bash
 curl http://localhost:8080/orders/ORD-98765
-
+```
 2. Create order
 ```bash
 curl -X POST http://localhost:8080/orders \
@@ -46,6 +46,7 @@ curl -X POST http://localhost:8080/orders \
           { "productCode": "PROD-002", "qty": 2 }
         ]
       }'
+```
 
 ### Notes
 In production, schema management would be handled by Liquibase. For demo purposes, Hibernate auto-ddl is used.
